@@ -2,12 +2,18 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import pickle
 import numpy as np
+import logging   # ✅ NEW
+
+# ✅ Setup logging
+logging.basicConfig(level=logging.INFO)
 
 app = FastAPI()
 
 # Load model and scaler
 model = pickle.load(open("model/diabetes_model.pkl", "rb"))
 scaler = pickle.load(open("model/scaler.pkl", "rb"))
+
+logging.info("Model and scaler loaded successfully")  # ✅ NEW
 
 # Input schema
 class DiabetesInput(BaseModel):
@@ -27,6 +33,8 @@ def home():
 @app.post("/predict")
 def predict(data: DiabetesInput):
     
+    logging.info(f"Received input: {data}")  # ✅ NEW
+    
     input_data = np.array([[
         data.Pregnancies,
         data.Glucose,
@@ -40,6 +48,8 @@ def predict(data: DiabetesInput):
     
     input_scaled = scaler.transform(input_data)
     prediction = model.predict(input_scaled)
+
+    logging.info(f"Prediction result: {prediction[0]}")  # ✅ NEW
     
     return {
         "prediction": int(prediction[0]),
