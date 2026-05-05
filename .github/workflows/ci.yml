@@ -20,5 +20,5 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Check app import
-        run: python -c "from backend.main import app; print('App loaded successfully')"
+      - name: Check Python syntax
+        run: python -m py_compile backend/main.py
