@@ -62,20 +62,19 @@ Implemented:
 
 # 📚 Table of Contents
 
-* [Live Deployment](#-live-deployment)
-* [Project Overview](#-project-overview)
-* [Tech Stack](#-tech-stack)
-* [Project Architecture](#-project-architecture)
-* [End-to-End Workflow](#️-end-to-end-workflow)
-* [API Example](#-api-example)
-* [How to Run Locally](#️-how-to-run-locally)
-* [CI/CD Workflows](#-cicd-workflows)
-* [Challenges & Solutions](#-challenges--solutions)
-* [Future Improvements](#-future-improvements)
-* [Learning Outcomes](#-learning-outcomes)
-* [Final Project Status](#-final-project-status)
-* [Author](#-author)
-
+- [Live Deployment](#live-deployment)
+- [Project Overview](#project-overview)
+- [Tech Stack](#tech-stack)
+- [Project Architecture](#project-architecture)
+- [End-to-End Workflow](#end-to-end-workflow)
+- [API Example](#api-example)
+- [How to Run Locally](#how-to-run-locally)
+- [CI/CD Workflows](#cicd-workflows)
+- [Challenges & Solutions](#challenges--solutions)
+- [Future Improvements](#future-improvements)
+- [Learning Outcomes](#learning-outcomes)
+- [Final Project Status](#final-project-status)
+- [Author](#author)
 ---
 
 # 🌍 Live Deployment
