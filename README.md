@@ -111,7 +111,7 @@ The ML model is exposed through a FastAPI REST API and deployed on Render.
 
 ---
 
-# 🛠️ Tech Stack
+#  Tech Stack
 
 ## Core ML & Data Processing
 
