@@ -19,15 +19,6 @@ Whenever code is pushed to GitHub, the CI pipeline automatically validates the p
 
 The project also includes a manual retraining pipeline where GitHub Actions can automatically run the model training script in the cloud and generate new model versions without manually running the training code locally.
 
-The system demonstrates the complete ML lifecycle including:
-
-*data preprocessing
-*model training
-*API serving
-*deployment
-*monitoring
-*versioning
-*automated retraining
 
 # 🎯 Quick Highlights
 
