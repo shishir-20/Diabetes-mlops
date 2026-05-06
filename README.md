@@ -21,13 +21,14 @@ The project also includes a manual retraining pipeline where GitHub Actions can 
 
 The system demonstrates the complete ML lifecycle including:
 
-data preprocessing
-model training
-API serving
-deployment
-monitoring
-versioning
-automated retraining
+*data preprocessing
+*model training
+*API serving
+*deployment
+*monitoring
+*versioning
+*automated retraining
+
 # 🎯 Quick Highlights
 
 ## ✅ Production-Ready ML System
