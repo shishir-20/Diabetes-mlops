@@ -1,6 +1,6 @@
 # 🩺 MLOps Project: End-to-End Diabetes Prediction System
 
-## 🚀 Elevator Pitch
+##  Solution Overview
 
 This repository delivers a complete end-to-end MLOps pipeline for Diabetes Prediction using Python, FastAPI, Scikit-learn, GitHub Actions, and Render.
 
