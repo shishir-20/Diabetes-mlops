@@ -2,21 +2,32 @@
 
 ##  Solution Overview
 
-This repository delivers a complete end-to-end MLOps pipeline for Diabetes Prediction using Python, FastAPI, Scikit-learn, GitHub Actions, and Render.
+This project is an end-to-end Diabetes Prediction MLOps system built using Python, FastAPI, Scikit-learn, GitHub Actions, and Render.
 
-The system is designed with production-oriented MLOps practices including:
+The system takes patient health data as input through a FastAPI REST API and predicts whether the patient is likely to have diabetes using a trained Machine Learning model.
 
-* Automated CI/CD workflows
-* Cloud deployment
-* Model versioning
-* Monitoring & logging
-* Automated retraining pipeline
-* REST API serving
+The project includes several MLOps practices such as:
 
-The project demonstrates the full machine learning lifecycle from data preprocessing and training to deployment and monitoring.
+Cloud deployment using Render
+CI pipeline using GitHub Actions
+Prediction monitoring and logging
+Model versioning with timestamp-based saving
+Automated retraining workflow using GitHub Actions
+REST API serving using FastAPI
 
----
+Whenever code is pushed to GitHub, the CI pipeline automatically validates the project and checks whether the backend works correctly.
 
+The project also includes a manual retraining pipeline where GitHub Actions can automatically run the model training script in the cloud and generate new model versions without manually running the training code locally.
+
+The system demonstrates the complete ML lifecycle including:
+
+data preprocessing
+model training
+API serving
+deployment
+monitoring
+versioning
+automated retraining
 # 🎯 Quick Highlights
 
 ## ✅ Production-Ready ML System
