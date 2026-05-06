@@ -8,6 +8,8 @@ import logging   # ✅ NEW
 logging.basicConfig(level=logging.INFO)
 
 app = FastAPI()
+prediction_count = 0
+
 
 # Load model and scaler
 model = pickle.load(open("model/diabetes_model.pkl", "rb"))
@@ -32,8 +34,13 @@ def home():
 
 @app.post("/predict")
 def predict(data: DiabetesInput):
-    
-    logging.info(f"Received input: {data}")  # ✅ NEW
+
+    global prediction_count
+    prediction_count += 1
+
+    logging.info(f"Total predictions: {prediction_count}")
+
+    logging.info(f"Received input: {data}")
     
     input_data = np.array([[
         data.Pregnancies,
@@ -49,7 +56,7 @@ def predict(data: DiabetesInput):
     input_scaled = scaler.transform(input_data)
     prediction = model.predict(input_scaled)
 
-    logging.info(f"Prediction result: {prediction[0]}")  # ✅ NEW
+    logging.info(f"Prediction result: {prediction[0]}")
     
     return {
         "prediction": int(prediction[0]),

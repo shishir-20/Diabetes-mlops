@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import pickle
+import datetime
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -31,10 +32,14 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # Train model
-model = RandomForestClassifier(random_state=42,class_weight={0:1, 1:2})
+model = RandomForestClassifier(
+    random_state=42,
+    class_weight={0: 1, 1: 2}
+)
+
 model.fit(X_train, y_train)
 
-# Method 2: Threshold tuning
+# Threshold tuning
 y_prob = model.predict_proba(X_test)[:, 1]
 y_pred = (y_prob > 0.35).astype(int)
 
@@ -45,9 +50,21 @@ print("Confusion Matrix:\n", cm)
 print("\nClassification Report:\n")
 print(classification_report(y_test, y_pred))
 
-# Save model
-pickle.dump(model, open("model/diabetes_model.pkl", "wb"))
-pickle.dump(scaler, open("model/scaler.pkl", "wb"))
+# =========================
+# MODEL VERSIONING STARTS
+# =========================
 
-print("Training completed")
-print("Model saved at: model/diabetes_model.pkl")
+# Create version using date and time
+version = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+
+# File paths
+model_path = f"model/model_{version}.pkl"
+scaler_path = f"model/scaler_{version}.pkl"
+
+# Save model and scaler
+pickle.dump(model, open(model_path, "wb"))
+pickle.dump(scaler, open(scaler_path, "wb"))
+
+print("\nTraining completed")
+print(f"Model saved at: {model_path}")
+print(f"Scaler saved at: {scaler_path}")
